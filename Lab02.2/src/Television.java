@@ -36,6 +36,6 @@ class Television {
     }
 
     public String toString() {
-        return brand + " " + volume;
+        return "Television Brand: " + brand + " " + volume;
     }
 }
