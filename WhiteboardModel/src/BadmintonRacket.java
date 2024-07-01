@@ -4,6 +4,13 @@ class BadmintonRacket {
     private int weight;
     private int gripSize;
 
+    public BadmintonRacket(String brand, int stringTension, int weight, int gripSize) {
+        setBrand(brand);
+        setStringTension(stringTension);
+        setWeight(weight);
+        setGripSize(gripSize);
+    }
+
     public void smash(){
         System.out.printf("You used %s racket to smash!%n", getBrand());
     }
@@ -17,7 +24,7 @@ class BadmintonRacket {
     }
 
     public void clear(){
-        System.out.printf("Clearing is easier with a smaller grip size and your %s racket has G%d gripsize.%n", getBrand(), getGripSize());
+        System.out.printf("Clearing is easier with a smaller grip size and your %s racket has G%d gripSize.%n", getBrand(), getGripSize());
     }
 
     public String getBrand() {

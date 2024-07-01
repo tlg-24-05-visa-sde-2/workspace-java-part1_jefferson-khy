@@ -8,6 +8,13 @@ class AlarmClock {
     // properties or attributes - these are called "instance variables" or "fields"
     private int snoozeInterval = 5;
 
+    //constructors
+    public AlarmClock() {}
+
+    public AlarmClock(int snoozeInterval){
+        setSnoozeInterval(snoozeInterval); // delegate to setter for validation/conversion if any
+    }
+
     public void snooze(){
         System.out.println("Snoozing for " + snoozeInterval + " minutes");
     }
@@ -17,11 +24,11 @@ class AlarmClock {
         return snoozeInterval;
     }
 
-    // TODO: implement constraint - must be between 10 and 20 inclusive
+    // TODO: implement constraint - must be between 1 and 20 inclusive
     // if incoming value is valid we take it, i.e. assign to private field
     // otherwise, we reject it with an error message
     public void setSnoozeInterval(int snoozeInterval) {
-        if(snoozeInterval >= 10 && snoozeInterval <= 20){
+        if(snoozeInterval >= 1 && snoozeInterval <= 20){
             this.snoozeInterval = snoozeInterval;
         }
         else {

@@ -12,8 +12,7 @@ class AlarmClockClient {
         clock1.setSnoozeInterval(7);
 
         // create an instance or object of AlarmClock and set its snoozeInterval
-        AlarmClock clock2 = new AlarmClock();
-        clock2.setSnoozeInterval(10);
+        AlarmClock clock2 = new AlarmClock(10);
 
         // create a 3rd AlarmClock object and don't set snoozeInterval
         AlarmClock clock3 = new AlarmClock();
