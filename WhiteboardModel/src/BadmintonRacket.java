@@ -5,19 +5,19 @@ class BadmintonRacket {
     private int gripSize;
 
     public void smash(){
-        System.out.printf("You used %s racket to smash!%n", brand);
+        System.out.printf("You used %s racket to smash!%n", getBrand());
     }
 
     public void block(){
-        System.out.printf("You used %s racket with %d pound string tension to block.%n", brand, stringTension);
+        System.out.printf("You used %s racket with %d pound string tension to block.%n", getBrand(), getStringTension());
     }
 
     public void drop(){
-        System.out.printf("Your %s racket is weight rated: %dU%n", brand, weight);
+        System.out.printf("Your %s racket is weight rated: %dU%n", getBrand(), getWeight());
     }
 
     public void clear(){
-        System.out.printf("Clearing is easier with a smaller grip size and your %s racket has G%d gripsize.%n", brand, gripSize);
+        System.out.printf("Clearing is easier with a smaller grip size and your %s racket has G%d gripsize.%n", getBrand(), getGripSize());
     }
 
     public String getBrand() {
@@ -53,6 +53,6 @@ class BadmintonRacket {
     }
 
     public String toString(){
-        return "Badminton Racket: " + brand + " " + stringTension + "lb" + " " + weight + "U" + " " + gripSize + "G";
+        return "Badminton Racket: " + getBrand() + " " + getStringTension() + "lb" + " " + getWeight() + "U" + " " + getGripSize() + "G";
     }
 }
