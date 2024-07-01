@@ -7,6 +7,18 @@ class Television {
     private String brand;
     private int volume;
 
+    //constructors
+    public Television(){}
+
+    public Television(String brand){
+        setBrand(brand);
+    }
+
+    public Television(String brand, int volume) {
+        this(brand);
+        setVolume(volume);
+    }
+
     //Business/action methods
     public void turnOn(){
         boolean isConnected = verifyInternetConnection();
@@ -39,6 +51,6 @@ class Television {
     }
 
     public String toString() {
-        return "Television Brand: " + getBrand() + " " + getVolume();
+        return "Television Brand: " + getBrand() + " " + "Volume: " + getVolume();
     }
 }

@@ -8,13 +8,13 @@ class TelevisionClient {
         tv1.setBrand("Samsung");
         tv1.setVolume(32);
 
-        Television tv2 = new Television();
-        tv2.setBrand("Sony");
-        tv2.setVolume(50);
+        Television tv2 = new Television("Sony", 50);
+//        tv2.setBrand("Sony");
+//        tv2.setVolume(50);
 
-        Television tv3 = new Television();
-        tv3.setBrand("Toshiba");
-        tv3.setVolume(1);
+        Television tv3 = new Television("Toshiba");
+//        tv3.setBrand("Toshiba");
+//        tv3.setVolume(1);
 
         tv1.turnOn();
         tv1.turnOff();
