@@ -53,6 +53,6 @@ class BadmintonRacket {
     }
 
     public String toString(){
-        return brand + " " + stringTension + "lb" + " " + weight + "U" + " " + gripSize + "G";
+        return "Badminton Racket: " + brand + " " + stringTension + "lb" + " " + weight + "U" + " " + gripSize + "G";
     }
 }
