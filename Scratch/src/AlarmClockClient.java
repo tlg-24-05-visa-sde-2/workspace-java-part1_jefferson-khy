@@ -9,11 +9,11 @@ class AlarmClockClient {
     public static void main(String[] args) {
         // create an instance or object of AlarmClock and set its snoozeInterval
         AlarmClock clock1 = new AlarmClock();
-        clock1.snoozeInterval = 7;
+        clock1.setSnoozeInterval(7);
 
         // create an instance or object of AlarmClock and set its snoozeInterval
         AlarmClock clock2 = new AlarmClock();
-        clock2.snoozeInterval = 10;
+        clock2.setSnoozeInterval(10);
 
         // create a 3rd AlarmClock object and don't set snoozeInterval
         AlarmClock clock3 = new AlarmClock();
@@ -21,5 +21,10 @@ class AlarmClockClient {
         clock1.snooze();
         clock2.snooze();
         clock3.snooze();
+        System.out.println();
+
+        System.out.println(clock1.toString());
+        System.out.println(clock2);
+        System.out.println(clock3);
     }
 }
