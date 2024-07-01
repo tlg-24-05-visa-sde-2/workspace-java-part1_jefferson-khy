@@ -7,6 +7,6 @@ class CalculatorClient {
         System.out.println("difference is: " + calc.Subtract(1.1, 3.3));
         System.out.println("is sum even: " + calc.isEven(sum));
         System.out.println();
-        System.out.println("winner is: " + calc.randomInt(5, 20));
+        System.out.println("winner is: " + calc.randomInt());
     }
 }

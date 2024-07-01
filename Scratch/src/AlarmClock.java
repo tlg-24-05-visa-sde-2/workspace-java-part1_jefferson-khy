@@ -21,7 +21,13 @@ class AlarmClock {
     // if incoming value is valid we take it, i.e. assign to private field
     // otherwise, we reject it with an error message
     public void setSnoozeInterval(int snoozeInterval) {
-        this.snoozeInterval = snoozeInterval;
+        if(snoozeInterval >= 10 && snoozeInterval <= 20){
+            this.snoozeInterval = snoozeInterval;
+        }
+        else {
+            String errorMsg = "Invalid snooze interval";
+            System.out.println(errorMsg);
+        }
     }
 
     public String toString(){

@@ -18,7 +18,17 @@ class Calculator {
      */
 
     int randomInt(int min, int max){
-        return 0;
+
+        double f = Math.random()/Math.nextDown(1.0);
+        double x = min*(1.0 - f) + max*f;
+        return (int) x;
+    }
+
+    /*
+     * returns random integer between 1 and max inclusive
+     */
+    int randomInt(int max){
+        return randomInt(1, max);
     }
 
     /*
@@ -27,15 +37,15 @@ class Calculator {
      * HINT: see a class called Math (in package java.lang) look for helpful method here
      * NOTE: these methods are all "static", call them as follows: Math.methodName()
      *
-     *
      */
 
     int randomInt(){
-        int result = 0;
-
-        double rand = Math.random(); // between 0.0 and 1.0      * including 0.0
-        double scaled = (rand * 11) + 1;
-        result = (int) scaled;
-        return result;
+        return randomInt(1, 11);
+//        int result = 0;
+//
+//        double rand = Math.random(); // between 0.0 and 1.0      * including 0.0
+//        double scaled = (rand * 11) + 1;
+//        result = (int) scaled;
+//        return result;
     }
 }
