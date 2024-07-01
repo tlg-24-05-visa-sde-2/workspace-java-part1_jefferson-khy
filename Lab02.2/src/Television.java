@@ -10,7 +10,7 @@ class Television {
     //Business/action methods
     public void turnOn(){
         boolean isConnected = verifyInternetConnection();
-        System.out.printf("Turning on your %s television to volume %d %n", brand, volume);
+        System.out.printf("Turning on your %s television to volume %d %n", getBrand(), getVolume());
     }
 
     public void turnOff(){
@@ -39,6 +39,6 @@ class Television {
     }
 
     public String toString() {
-        return "Television Brand: " + brand + " " + volume;
+        return "Television Brand: " + getBrand() + " " + getVolume();
     }
 }
