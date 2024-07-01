@@ -3,9 +3,11 @@
  * It has properties, attributes, business methods but NO main() method
  */
 class Television {
+    //Fields/instance variables
     private String brand;
     private int volume;
 
+    //Business/action methods
     public void turnOn(){
         boolean isConnected = verifyInternetConnection();
         System.out.printf("Turning on your %s television to volume %d %n", brand, volume);
@@ -15,6 +17,7 @@ class Television {
         System.out.printf("Shutting down...goodbye %n");
     }
 
+    //Accessor Methods/ toString Methods
     public String getBrand() {
         return brand;
     }
