@@ -15,6 +15,8 @@ class Television {
     //Fields/instance variables
     private String brand;
     private int volume;
+    private boolean isMuted;
+    private int oldVolume;
 
     //constructors
     public Television(){
@@ -42,13 +44,41 @@ class Television {
         System.out.printf("Shutting down...goodbye %n");
     }
 
+    public void mute(){
+        if(isMuted == false){
+            oldVolume = getVolume();
+            setVolume(MIN_VOLUME);
+            isMuted = true;
+        }
+        else{
+            setVolume(oldVolume);
+            isMuted = false;
+        }
+    }
+
     //Accessor Methods/ toString Methods
     public String getBrand() {
         return brand;
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        switch (brand){
+            case "Samsung":
+                this.brand = "Samsung";
+                break;
+            case "LG":
+                this.brand = "LG";
+                break;
+            case "Sony":
+                this.brand = "Sony";
+                break;
+            case "Toshiba":
+                this.brand = "Toshiba";
+                break;
+            default:
+                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: Samsung, LG, Sony, or Toshiba";
+                System.out.println(errorMsg);
+        }
     }
 
     public int getVolume() {
@@ -56,7 +86,17 @@ class Television {
     }
 
     public void setVolume(int volume) {
-        this.volume = volume;
+        if(volume >= MIN_VOLUME && volume <= MAX_VOLUME){
+            this.volume = volume;
+        }
+        else{
+            String errorMsg = "Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME + ".";
+            System.out.println(errorMsg);
+        }
+    }
+
+    public boolean isMuted() {
+        return isMuted;
     }
 
     private boolean verifyInternetConnection(){
@@ -64,6 +104,7 @@ class Television {
     }
 
     public String toString() {
-        return "Television Brand: " + getBrand() + " " + "Volume: " + getVolume();
+        String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume());
+        return "Television Brand: " + getBrand() + " " + "Volume: " + volumeString;
     }
 }
