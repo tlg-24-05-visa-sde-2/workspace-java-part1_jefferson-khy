@@ -1,7 +1,7 @@
 class BadmintonRacketClient {
     public static void main(String[] args) {
         BadmintonRacket racket1 = new BadmintonRacket("Yonex", 24, 4, 5);
-        BadmintonRacket racket2 = new BadmintonRacket("Victor", 30,3,5);
+        BadmintonRacket racket2 = new BadmintonRacket("Victor",3,5);
 
 //        racket1.setBrand("Yonex");
 //        racket1.setStringTension(24);
@@ -9,7 +9,6 @@ class BadmintonRacketClient {
 //        racket1.setGripSize(5);
 //
 //        racket2.setBrand("Victor");
-//        racket2.setStringTension(30);
 //        racket2.setWeight(3);
 //        racket2.setGripSize(5);
 
