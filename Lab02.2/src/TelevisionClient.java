@@ -4,11 +4,13 @@
  */
 class TelevisionClient {
     public static void main(String[] args) {
+        System.out.println(Television.getInstanceCount() + " instances");
+
         Television tv1 = new Television();
         tv1.setBrand("Samsung");
-        tv1.setVolume(32);
+        tv1.setVolume(Television.MAX_VOLUME);
 
-        Television tv2 = new Television("Sony", 50);
+        Television tv2 = new Television("Sony", Television.MIN_VOLUME);
 //        tv2.setBrand("Sony");
 //        tv2.setVolume(50);
 
@@ -18,8 +20,12 @@ class TelevisionClient {
 
         tv1.turnOn();
         tv1.turnOff();
+        System.out.println();
+
         tv2.turnOn();
         tv2.turnOff();
+        System.out.println();
+
         tv3.turnOn();
         tv3.turnOff();
         System.out.println();
@@ -27,5 +33,8 @@ class TelevisionClient {
         System.out.println(tv1.toString());
         System.out.println(tv2);
         System.out.println(tv3);
+        System.out.println();
+
+        System.out.println(Television.getInstanceCount() + " instances");
     }
 }

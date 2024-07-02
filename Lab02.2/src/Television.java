@@ -3,14 +3,26 @@
  * It has properties, attributes, business methods but NO main() method
  */
 class Television {
+    //class level static variables, these live in shared zone
+    public static final int MIN_VOLUME = 0;
+    public static final int MAX_VOLUME = 100;
+    private static int instanceCount = 0;
+
+    public static int getInstanceCount(){
+        return instanceCount;
+    }
+
     //Fields/instance variables
     private String brand;
     private int volume;
 
     //constructors
-    public Television(){}
+    public Television(){
+        instanceCount++;
+    }
 
     public Television(String brand){
+        this();
         setBrand(brand);
     }
 
@@ -20,6 +32,7 @@ class Television {
     }
 
     //Business/action methods
+
     public void turnOn(){
         boolean isConnected = verifyInternetConnection();
         System.out.printf("Turning on your %s television to volume %d %n", getBrand(), getVolume());
