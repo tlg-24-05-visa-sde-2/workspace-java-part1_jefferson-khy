@@ -16,7 +16,7 @@ class AlarmClock {
     }
 
     public void snooze(){
-        System.out.println("Snoozing for " + snoozeInterval + " minutes");
+        System.out.println("Snoozing for " + getSnoozeInterval() + " minutes");
     }
 
     // accessor methods - provide controlled access to the objects fields
@@ -32,12 +32,13 @@ class AlarmClock {
             this.snoozeInterval = snoozeInterval;
         }
         else {
-            String errorMsg = "Invalid snooze interval";
+            String errorMsg = "Invalid snooze interval: " + snoozeInterval + "\n Must be between 1 and 20";
             System.out.println(errorMsg);
+            return;
         }
     }
 
     public String toString(){
-        return "AlarmClock: snoozeInterval=" + snoozeInterval;
+        return "AlarmClock: snoozeInterval=" + getSnoozeInterval();
     }
 }

@@ -4,8 +4,12 @@ class BadmintonRacket {
     private int weight;
     private int gripSize;
 
-    public BadmintonRacket(String brand, int stringTension, int weight, int gripSize) {
+    public BadmintonRacket(String brand){
         setBrand(brand);
+    }
+
+    public BadmintonRacket(String brand, int stringTension, int weight, int gripSize) {
+        this(brand);
         setStringTension(stringTension);
         setWeight(weight);
         setGripSize(gripSize);
