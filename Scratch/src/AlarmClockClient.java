@@ -15,7 +15,7 @@ class AlarmClockClient {
         AlarmClock clock2 = new AlarmClock(10);
 
         // create a 3rd AlarmClock object and don't set snoozeInterval
-        AlarmClock clock3 = new AlarmClock();
+        AlarmClock clock3 = new AlarmClock(AlarmClock.MAX_INTERVAL);
 
         clock1.snooze();
         clock2.snooze();

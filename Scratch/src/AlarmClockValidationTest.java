@@ -14,9 +14,11 @@ class AlarmClockValidationTest {
 
         clock.setSnoozeInterval(20);
         System.out.println(clock);
+        System.out.println();
 
         clock.setSnoozeInterval(0);
         System.out.println(clock);
+        System.out.println();
 
         clock.setSnoozeInterval(21);
         System.out.println(clock);

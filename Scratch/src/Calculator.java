@@ -1,13 +1,17 @@
+/*
+ * This is an all-static class, it has nothing but static methods
+ */
 class Calculator {
-    double Add(double a, double b) {
+
+    public static double add(double a, double b) {
         return a + b;
     }
 
-    double Subtract(double a, double b){
+    public static double subtract(double a, double b){
         return a - b;
     }
 
-    boolean isEven(double value){
+    public static boolean isEven(double value){
         return value % 2 == 0;
     }
 
@@ -17,7 +21,7 @@ class Calculator {
      * TODO: implement this algorithm
      */
 
-    int randomInt(int min, int max){
+    public static int randomInt(int min, int max){
 
         double f = Math.random()/Math.nextDown(1.0);
         double x = min*(1.0 - f) + max*f;
@@ -27,7 +31,7 @@ class Calculator {
     /*
      * returns random integer between 1 and max inclusive
      */
-    int randomInt(int max){
+    public static int randomInt(int max){
         return randomInt(1, max);
     }
 
@@ -39,7 +43,7 @@ class Calculator {
      *
      */
 
-    int randomInt(){
+    public static int randomInt(){
         return randomInt(1, 11);
 //        int result = 0;
 //

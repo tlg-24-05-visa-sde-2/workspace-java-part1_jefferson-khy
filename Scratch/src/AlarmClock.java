@@ -1,10 +1,13 @@
-import org.w3c.dom.ls.LSOutput;
-
 /*
  * Application class to model the workings of an AlarmClock.
  * This class will NOT have a main() method, most such classes do not.
  */
 class AlarmClock {
+    //class (static) fields - one copy shared among all instances
+    public static final int MIN_INTERVAL = 1; //class constant
+    public static final int MAX_INTERVAL = 20; //class constant
+
+    // everything below here is present in EACH instance of AlarmClock
     // properties or attributes - these are called "instance variables" or "fields"
     private int snoozeInterval = 5;
 
@@ -28,17 +31,17 @@ class AlarmClock {
     // if incoming value is valid we take it, i.e. assign to private field
     // otherwise, we reject it with an error message
     public void setSnoozeInterval(int snoozeInterval) {
-        if(snoozeInterval >= 1 && snoozeInterval <= 20){
+        if(snoozeInterval >= MIN_INTERVAL && snoozeInterval <= MAX_INTERVAL){
             this.snoozeInterval = snoozeInterval;
         }
         else {
-            String errorMsg = "Invalid snooze interval: " + snoozeInterval + "\n Must be between 1 and 20";
+            String errorMsg = "Invalid snooze interval: " + snoozeInterval + "\n Must be between " + MIN_INTERVAL + " and " + MAX_INTERVAL;
             System.out.println(errorMsg);
             return;
         }
     }
 
     public String toString(){
-        return "AlarmClock: snoozeInterval=" + getSnoozeInterval();
+        return "AlarmClock: snoozeInterval = " + getSnoozeInterval();
     }
 }
