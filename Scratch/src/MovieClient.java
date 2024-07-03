@@ -4,6 +4,8 @@ class MovieClient {
         Movie movie1 = new Movie("Dune");
         movie1.setReleaseYear(2021);
         movie1.setRevenue(407_000_000.0);
+        movie1.setRating(Rating.PG_13);
+        movie1.setGenre(Genre.SCI_FI);
         System.out.println(movie1); //toString() auto called
         System.out.println();
 
@@ -13,5 +15,6 @@ class MovieClient {
 
         Movie movie3 = new Movie("Adventures of Jay and DeShon", Genre.MYSTERY);
         System.out.println(movie3);
+        System.out.println();
     }
 }

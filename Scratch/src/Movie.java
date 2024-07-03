@@ -1,8 +1,8 @@
 class Movie {
     //fields or instance variables
     private String title;
-    private int releaseYear;
-    private double revenue;
+    private Integer releaseYear;
+    private Double revenue;
     private Rating rating;
     private Genre genre;
 
@@ -16,7 +16,7 @@ class Movie {
         setGenre(genre);
     }
 
-    public Movie(String title, int releaseYear, double revenue, Rating rating, Genre genre) {
+    public Movie(String title, int releaseYear, Double revenue, Rating rating, Genre genre) {
         //delegate to setters for any data validation/conversion they might be doing
         this(title, genre);                    //delegate to 2-arg ctor above me
         setReleaseYear(releaseYear);        //delegate to setters for the rest of them
@@ -36,19 +36,19 @@ class Movie {
         return this.title = title;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
-    public double getRevenue() {
+    public Double getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(double revenue) {
+    public void setRevenue(Double revenue) {
         this.revenue = revenue;
     }
 
