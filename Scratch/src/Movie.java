@@ -3,20 +3,25 @@ class Movie {
     private String title;
     private int releaseYear;
     private double revenue;
+    private Rating rating;
+    private Genre genre;
 
     //constructors
-    public Movie(){
-    }
-
     public Movie(String title){
         setTitle(title);
     }
 
-    public Movie(String title, int releaseYear, double revenue) {
+    public Movie(String title, Genre genre){
+        this(title);
+        setGenre(genre);
+    }
+
+    public Movie(String title, int releaseYear, double revenue, Rating rating, Genre genre) {
         //delegate to setters for any data validation/conversion they might be doing
-        this(title);                    //delegate to ctor above me for title
+        this(title, genre);                    //delegate to 2-arg ctor above me
         setReleaseYear(releaseYear);        //delegate to setters for the rest of them
         setRevenue(revenue);
+        setRating(rating);
     }
 
     //business or action methods
@@ -47,7 +52,23 @@ class Movie {
         this.revenue = revenue;
     }
 
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
     public String toString(){
-        return "Movie: " + getTitle() + ", releaseYear: " + getReleaseYear() + ", Revenue: " + getRevenue();
+        return "Movie: " + getTitle() + ", releaseYear: " + getReleaseYear() + ", revenue: " + getRevenue() + ", rating: " + getRating() + ", genre: " + getGenre();
     }
 }
