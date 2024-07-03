@@ -14,12 +14,17 @@ class CalculatorTest {
                 break;
             }
         }
-        if (isCorrect) {
-            System.out.println("IT WORKS!");
-        }
-        else {
-            System.out.println("IT's BROKE!");
 
-        }
+        //ternary expression: assign one thing to another to a vairable, depending on condition
+        String msg = (isCorrect) ? "IT WORKS!" : "IT's BROKE!";
+        System.out.println(msg);
+
+//        if (isCorrect) {
+//            System.out.println("IT WORKS!");
+//        }
+//        else {
+//            System.out.println("IT's BROKE!");
+//
+//        }
     }
 }

@@ -1,4 +1,11 @@
 class BadmintonRacket {
+    private static final int minStringTension = 20;
+    private static final int maxStringTension = 30;
+    private static final int minGripSize = 1;
+    private static final int maxGripSize = 5;
+    private static final int minWeight = 2;
+    private static final int maxWeight = 5;
+
     private String brand;
     private int stringTension;
     private int weight;
@@ -36,7 +43,20 @@ class BadmintonRacket {
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        switch (brand){
+            case "Li-Ning":
+                this.brand = "Li-Ning";
+                break;
+            case "Victor":
+                this.brand = "Victor";
+                break;
+            case "Yonex":
+                this.brand = "Yonex";
+                break;
+            default:
+                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: Li-Ning, Victor, or Yonex";
+                System.out.println(errorMsg);
+        }
     }
 
     public int getStringTension() {
@@ -44,7 +64,13 @@ class BadmintonRacket {
     }
 
     public void setStringTension(int stringTension) {
-        this.stringTension = stringTension;
+        if(stringTension < minStringTension || stringTension > maxStringTension){
+            this.stringTension = stringTension;
+        }
+        else{
+            String errorMsg = "String tension: " + stringTension + " is invalid" + "\nString tension should be between " + minStringTension + " and " + maxStringTension + ".";
+            System.out.println(errorMsg);
+        }
     }
 
     public int getWeight() {
@@ -52,7 +78,13 @@ class BadmintonRacket {
     }
 
     public void setWeight(int weight) {
-        this.weight = weight;
+        if(weight < minWeight || weight > maxWeight){
+            this.weight = weight;
+        }
+        else{
+            String errorMsg = "Racket weight: " + weight + " is invalid" + "\nRacket weight should be between " + minWeight + " and " + maxWeight + ".";
+            System.out.println(errorMsg);
+        }
     }
 
     public int getGripSize() {
@@ -60,7 +92,13 @@ class BadmintonRacket {
     }
 
     public void setGripSize(int gripSize) {
-        this.gripSize = gripSize;
+        if(gripSize < minGripSize || gripSize > maxGripSize){
+            this.gripSize = gripSize;
+        }
+        else{
+            String errorMsg = "Grip size: " + gripSize + " is invalid" + "\nGrip Size should be between " + minGripSize + " and " + maxGripSize + ".";
+            System.out.println(errorMsg);
+        }
     }
 
     public String toString(){
