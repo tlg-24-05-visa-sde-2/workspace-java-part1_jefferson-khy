@@ -8,8 +8,8 @@ class BadmintonRacketValidationTest {
         System.out.println(racket2);
         System.out.println();
 
-//        BadmintonRacket racket3 = new BadmintonRacket("Fake", 70, 0, 7);
-//        System.out.println(racket3);
-//        System.out.println();
+        BadmintonRacket racket3 = new BadmintonRacket("Fake", 70, 0, 7);
+        System.out.println(racket3);
+        System.out.println();
     }
 }

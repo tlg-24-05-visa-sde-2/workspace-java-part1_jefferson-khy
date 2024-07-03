@@ -64,7 +64,7 @@ class BadmintonRacket {
     }
 
     public void setStringTension(int stringTension) {
-        if(stringTension < minStringTension || stringTension > maxStringTension){
+        if(stringTension >= minStringTension && stringTension <= maxStringTension){
             this.stringTension = stringTension;
         }
         else{
@@ -78,7 +78,7 @@ class BadmintonRacket {
     }
 
     public void setWeight(int weight) {
-        if(weight < minWeight || weight > maxWeight){
+        if(weight >= minWeight && weight <= maxWeight){
             this.weight = weight;
         }
         else{
@@ -92,7 +92,7 @@ class BadmintonRacket {
     }
 
     public void setGripSize(int gripSize) {
-        if(gripSize < minGripSize || gripSize > maxGripSize){
+        if(gripSize >= minGripSize && gripSize <= maxGripSize){
             this.gripSize = gripSize;
         }
         else{
