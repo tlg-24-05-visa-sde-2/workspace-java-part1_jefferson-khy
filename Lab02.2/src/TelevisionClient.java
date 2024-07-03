@@ -8,13 +8,14 @@ class TelevisionClient {
 
         Television tv1 = new Television();
         tv1.setBrand("Samsung");
-        tv1.setVolume(Television.MAX_VOLUME);
+        tv1.setVolume(32);
+        tv1.setDisplay(DisplayType.PLASMA);
 
-        Television tv2 = new Television("Sony", Television.MIN_VOLUME);
+        Television tv2 = new Television("Sony", 50, DisplayType.OLED);
 //        tv2.setBrand("Sony");
 //        tv2.setVolume(50);
 
-        Television tv3 = new Television("Toshiba");
+        Television tv3 = new Television("Toshiba", Television.MAX_VOLUME);
 //        tv3.setBrand("Toshiba");
 //        tv3.setVolume(1);
 

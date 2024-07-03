@@ -15,6 +15,7 @@ class Television {
     //Fields/instance variables
     private String brand;
     private int volume;
+    private DisplayType displayType = DisplayType.LED;
     private boolean isMuted;
     private int oldVolume;
 
@@ -31,6 +32,11 @@ class Television {
     public Television(String brand, int volume) {
         this(brand);
         setVolume(volume);
+    }
+
+    public Television(String brand, int volume, DisplayType displayType) {
+        this(brand, volume);
+        setDisplay(displayType);
     }
 
     //Business/action methods
@@ -95,6 +101,14 @@ class Television {
         }
     }
 
+    public DisplayType getDisplay(){
+        return displayType;
+    }
+
+    public void setDisplay(DisplayType displayType) {
+        this.displayType = displayType;
+    }
+
     public boolean isMuted() {
         return isMuted;
     }
@@ -105,6 +119,6 @@ class Television {
 
     public String toString() {
         String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume());
-        return "Television Brand: " + getBrand() + " " + "Volume: " + volumeString;
+        return "Television Brand: " + getBrand() + ", " + "Volume: " + volumeString + ", display type: " + getDisplay();
     }
 }
