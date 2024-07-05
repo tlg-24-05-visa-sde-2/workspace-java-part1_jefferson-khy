@@ -106,7 +106,9 @@ class BadmintonRacket {
     }
 
     public String toString(){
-        return String.format("Badminton Racket: brand: %s, stringTension: %slb, wieght: %sU, gripSize: %sG", getBrand(), getStringTension(), getWeight(), getGripSize());
+        String weightFormat = (getWeight() == null || getWeight() == 0) ? "%sU" : "%s";
+        String gripSizeFormat = (getGripSize() == null || getGripSize() == 0) ? "%sG" : "%s";
+        return String.format("Badminton Racket: brand: %s, stringTension: %slb, weight: " + weightFormat + ", gripSize: " + gripSizeFormat, getBrand(), getStringTension(), getWeight(), getGripSize());
 //        return "Badminton Racket: " + getBrand() + " " + getStringTension() + "lb" + " " + getWeight() + "U" + " " + getGripSize() + "G";
     }
 }

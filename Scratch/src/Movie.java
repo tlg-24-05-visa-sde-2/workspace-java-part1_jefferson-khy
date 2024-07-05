@@ -71,7 +71,7 @@ class Movie {
     public String toString(){
         //TODO make it so null revenue shows up as null, and non-null revenue shows up as 123,000,345.94
         //Hint: if revenue is null, use %s, otherwise use %,.2f
-        return String.format("Movie: title = %s, releaseYear = %s, revenue = %,.2f, rating = %s, genre = %s", getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
-//        return "Movie: " + getTitle() + ", releaseYear: " + getReleaseYear() + ", revenue: " + getRevenue() + ", rating: " + getRating() + ", genre: " + getGenre();
+        String revenueFormat = getRevenue() == null ? "%s" : "$%,.2f";
+        return String.format("Movie: title = %s, releaseYear = %s, revenue = " + revenueFormat + ", rating = %s", getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
     }
 }
