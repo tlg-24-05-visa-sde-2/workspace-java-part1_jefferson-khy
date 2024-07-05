@@ -6,18 +6,18 @@ class BadmintonRacket {
     private static final int minWeight = 2;
     private static final int maxWeight = 5;
 
-    private String brand;
+    private Brand brand;
     private int stringTension;
-    private int weight;
-    private int gripSize;
+    private Integer weight;
+    private Integer gripSize;
 
-    public BadmintonRacket(String brand, int weight, int gripSize){
+    public BadmintonRacket(Brand brand, int weight, int gripSize){
         setBrand(brand);
         setWeight(weight);
         setGripSize(gripSize);
     }
 
-    public BadmintonRacket(String brand, int stringTension, int weight, int gripSize) {
+    public BadmintonRacket(Brand brand, int stringTension, int weight, int gripSize) {
         this(brand, weight, gripSize);
         setStringTension(stringTension);
     }
@@ -38,23 +38,23 @@ class BadmintonRacket {
         System.out.printf("Clearing is easier with a smaller grip size and your %s racket has G%d gripSize.%n", getBrand(), getGripSize());
     }
 
-    public String getBrand() {
+    public Brand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(Brand brand) {
         switch (brand){
-            case "Li-Ning":
-                this.brand = "Li-Ning";
+            case LI_NING:
+                this.brand = brand;
                 break;
-            case "Victor":
-                this.brand = "Victor";
+            case VICTOR:
+                this.brand = brand;
                 break;
-            case "Yonex":
-                this.brand = "Yonex";
+            case YONEX:
+                this.brand = brand;
                 break;
             default:
-                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: Li-Ning, Victor, or Yonex";
+                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: LiNing, Victor, or Yonex";
                 System.out.println(errorMsg);
         }
     }
@@ -73,11 +73,11 @@ class BadmintonRacket {
         }
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         if(weight >= minWeight && weight <= maxWeight){
             this.weight = weight;
         }
@@ -87,11 +87,11 @@ class BadmintonRacket {
         }
     }
 
-    public int getGripSize() {
+    public Integer getGripSize() {
         return gripSize;
     }
 
-    public void setGripSize(int gripSize) {
+    public void setGripSize(Integer gripSize) {
         if(gripSize >= minGripSize && gripSize <= maxGripSize){
             this.gripSize = gripSize;
         }
@@ -102,6 +102,7 @@ class BadmintonRacket {
     }
 
     public String toString(){
-        return "Badminton Racket: " + getBrand() + " " + getStringTension() + "lb" + " " + getWeight() + "U" + " " + getGripSize() + "G";
+        return String.format("Badminton Racket: brand: %s, stringTension: %slb, wieght: %sU, gripSize: %sG", getBrand(), getStringTension(), getWeight(), getGripSize());
+//        return "Badminton Racket: " + getBrand() + " " + getStringTension() + "lb" + " " + getWeight() + "U" + " " + getGripSize() + "G";
     }
 }
