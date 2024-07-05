@@ -70,16 +70,10 @@ class Television {
     public void setBrand(String brand) {
         switch (brand){
             case "Samsung":
-                this.brand = "Samsung";
-                break;
             case "LG":
-                this.brand = "LG";
-                break;
             case "Sony":
-                this.brand = "Sony";
-                break;
             case "Toshiba":
-                this.brand = "Toshiba";
+                this.brand = brand;
                 break;
             default:
                 String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: Samsung, LG, Sony, or Toshiba";
