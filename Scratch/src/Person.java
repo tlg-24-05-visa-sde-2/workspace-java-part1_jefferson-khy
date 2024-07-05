@@ -16,15 +16,25 @@ class Person {
         this.birthDate = birthDate;
     }
 
-    public String getName() {
+    /*
+     * Returns the person's age in whole years.
+     * This is the period of time between the birthdate and todays date
+     * this is a derived property it is calculated from existing data not a new field
+     */
+    public int age() {
+       int currentAge = LocalDate.now().getYear() - birthDate.getYear();
+       return currentAge;
+    }
+
+    public String name() {
         return name;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDate birthDate() {
         return birthDate;
     }
 
     public String toString(){
-        return String.format("Person: name = %s, birthDate: %s", getName(), getBirthDate());
+        return String.format("Person: name = %s, birthDate: %s", name(), birthDate());
     }
 }
