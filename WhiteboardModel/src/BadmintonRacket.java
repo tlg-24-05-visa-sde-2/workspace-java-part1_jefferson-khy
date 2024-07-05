@@ -54,8 +54,9 @@ class BadmintonRacket {
                 this.brand = brand;
                 break;
             default:
-                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: LiNing, Victor, or Yonex";
-                System.out.println(errorMsg);
+                System.out.printf("Invalid brand: %s. Allowed brands are: LiNing, Victor, or Yonex%n", brand);
+//                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: LiNing, Victor, or Yonex";
+//                System.out.println(errorMsg);
         }
     }
 
@@ -68,8 +69,9 @@ class BadmintonRacket {
             this.stringTension = stringTension;
         }
         else{
-            String errorMsg = "String tension: " + stringTension + " is invalid" + "\nString tension should be between " + minStringTension + " and " + maxStringTension + ".";
-            System.out.println(errorMsg);
+            System.out.printf("String tension: %s is invalid. String tension should be between %d and %d.%n", stringTension, minStringTension, maxStringTension);
+//            String errorMsg = "String tension: " + stringTension + " is invalid" + "\nString tension should be between " + minStringTension + " and " + maxStringTension + ".";
+//            System.out.println(errorMsg);
         }
     }
 
@@ -82,8 +84,9 @@ class BadmintonRacket {
             this.weight = weight;
         }
         else{
-            String errorMsg = "Racket weight: " + weight + " is invalid" + "\nRacket weight should be between " + minWeight + " and " + maxWeight + ".";
-            System.out.println(errorMsg);
+            System.out.printf("Racket weight: %d is invalid. Racket weight should be between %d and %d.%n", weight, minWeight, maxWeight);
+//            String errorMsg = "Racket weight: " + weight + " is invalid" + "\nRacket weight should be between " + minWeight + " and " + maxWeight + ".";
+//            System.out.println(errorMsg);
         }
     }
 
@@ -96,8 +99,9 @@ class BadmintonRacket {
             this.gripSize = gripSize;
         }
         else{
-            String errorMsg = "Grip size: " + gripSize + " is invalid" + "\nGrip Size should be between " + minGripSize + " and " + maxGripSize + ".";
-            System.out.println(errorMsg);
+            System.out.printf("Grip size: %d is invalid. Grip size should be between %d and %d.%n", gripSize, minGripSize, maxGripSize);
+//            String errorMsg = "Grip size: " + gripSize + " is invalid" + "\nGrip Size should be between " + minGripSize + " and " + maxGripSize + ".";
+//            System.out.println(errorMsg);
         }
     }
 
