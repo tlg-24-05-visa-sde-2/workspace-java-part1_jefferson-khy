@@ -1,3 +1,8 @@
+package io.badminton.test;
+
+import io.badminton.BadmintonRacket;
+import io.badminton.Brand;
+
 class BadmintonRacketValidationTest {
     public static void main(String[] args) {
         BadmintonRacket racket1 = new BadmintonRacket(Brand.YONEX, 4, 4);

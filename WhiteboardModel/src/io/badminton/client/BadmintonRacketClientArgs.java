@@ -1,3 +1,8 @@
+package io.badminton.client;
+
+import io.badminton.BadmintonRacket;
+import io.badminton.Brand;
+
 import java.util.Arrays;
 
 class BadmintonRacketClientArgs {

@@ -1,4 +1,6 @@
-enum Brand {
+package io.badminton;
+
+public enum Brand {
     YONEX("Yonex"),
     VICTOR("Victor"),
     LI_NING("Li-Ning");
