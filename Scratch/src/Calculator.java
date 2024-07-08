@@ -16,6 +16,20 @@ class Calculator {
     }
 
     /*
+     * Returns average of supplied integers
+     *
+     * TODO: make method work with only 1 parameter passed
+     */
+    public static double average(int first, int... rest){
+        // inside here, rest is automatically an array of int[]
+        int sum = first;
+        for(int value : rest){
+            sum += value;
+        }
+        return (double) sum / (rest.length + 1);
+    }
+
+    /*
      * Returns a random integer between min and max (inclusive)
      *
      * TODO: implement this algorithm

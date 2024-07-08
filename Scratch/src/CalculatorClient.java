@@ -7,5 +7,9 @@ class CalculatorClient {
         System.out.println("is sum even: " + Calculator.isEven(sum));
         System.out.println();
         System.out.println("winner is: " + Calculator.randomInt(5, 16));
+        System.out.println();
+
+        System.out.println("average is: " +  Calculator.average(3,4,9,2,3));
+        System.out.println("average of a single number 12 is: " + Calculator.average(12));
     }
 }
