@@ -1,4 +1,4 @@
-class TelevisionMuteTest {
+class TelevisionValidationTest {
     public static void main(String[] args) {
         Television tv = new Television("Samsung", 32);
         System.out.println(tv);
@@ -25,5 +25,20 @@ class TelevisionMuteTest {
         System.out.println(tv);
         tv.mute();
         System.out.println(tv);
+
+        tv.setBrand("Samsung");
+        System.out.println("brand: " + tv.getBrand());
+
+        tv.setBrand("LG");
+        System.out.println("brand: " + tv.getBrand());
+
+        tv.setBrand("Sony");
+        System.out.println("brand: " + tv.getBrand());
+
+        tv.setBrand("Toshiba");
+        System.out.println("brand: " + tv.getBrand());
+
+        tv.setBrand("INVALID");
+        System.out.println("brand: " + tv.getBrand());
     }
 }

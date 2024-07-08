@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * application or system class to model workings of a television
  * It has properties, attributes, business methods but NO main() method
@@ -7,9 +9,21 @@ class Television {
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
     private static int instanceCount = 0;
+    public static final String[] VALID_BRANDS = { "Samsung", "LG", "Sony", "Toshiba" };
 
     public static int getInstanceCount(){
         return instanceCount;
+    }
+
+    public static boolean isValidBrand(String brand){
+        boolean valid = false;
+        for(String currentBrand : VALID_BRANDS){
+            if(currentBrand.equals(brand)){
+                valid = true;
+                break;
+            }
+        }
+        return valid;
     }
 
     //Fields/instance variables
@@ -67,18 +81,12 @@ class Television {
         return brand;
     }
 
+    //VALID_BRANDS contains { "Samsung", "LG", "Sony", "Toshiba" };
     public void setBrand(String brand) {
-        switch (brand){
-            case "Samsung":
-            case "LG":
-            case "Sony":
-            case "Toshiba":
-                this.brand = brand;
-                break;
-            default:
-                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: Samsung, LG, Sony, or Toshiba";
-                System.out.println(errorMsg);
+        if(!isValidBrand(brand)){
+            System.out.printf("Invalid brand: %s. Valid brands are: %s.%n", brand, Arrays.toString(VALID_BRANDS));
         }
+        this.brand = brand;
     }
 
     public int getVolume() {
