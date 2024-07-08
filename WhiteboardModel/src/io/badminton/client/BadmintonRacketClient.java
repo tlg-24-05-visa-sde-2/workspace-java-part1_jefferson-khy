@@ -8,15 +8,6 @@ class BadmintonRacketClient {
         BadmintonRacket racket1 = new BadmintonRacket(Brand.YONEX, 24, 4, 5);
         BadmintonRacket racket2 = new BadmintonRacket(Brand.VICTOR,3,5);
 
-        //  racket1.setBrand("Yonex");
-        //  racket1.setStringTension(24);
-        //  racket1.setWeight(4);
-        //  racket1.setGripSize(5);
-        //
-        //  racket2.setBrand("Victor");
-        //  racket2.setWeight(3);
-        //  racket2.setGripSize(5);
-
         racket1.smash();
         racket1.block();
         racket1.clear();
