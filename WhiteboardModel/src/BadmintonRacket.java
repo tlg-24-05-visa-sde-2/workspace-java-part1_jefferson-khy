@@ -1,13 +1,13 @@
 class BadmintonRacket {
-    private static final int minStringTension = 20;
-    private static final int maxStringTension = 30;
-    private static final int minGripSize = 1;
-    private static final int maxGripSize = 5;
-    private static final int minWeight = 2;
-    private static final int maxWeight = 5;
+    public static final int minStringTension = 20;
+    public static final int maxStringTension = 30;
+    public static final int minGripSize = 1;
+    public static final int maxGripSize = 5;
+    public static final int minWeight = 2;
+    public static final int maxWeight = 5;
 
     private Brand brand;
-    private int stringTension;
+    private Integer stringTension;
     private Integer weight;
     private Integer gripSize;
 
@@ -43,28 +43,14 @@ class BadmintonRacket {
     }
 
     public void setBrand(Brand brand) {
-        switch (brand){
-            case LI_NING:
-                this.brand = brand;
-                break;
-            case VICTOR:
-                this.brand = brand;
-                break;
-            case YONEX:
-                this.brand = brand;
-                break;
-            default:
-                System.out.printf("Invalid brand: %s. Allowed brands are: LiNing, Victor, or Yonex%n", brand);
-//                String errorMsg = "Invalid brand: " + brand + "\nAllowed brands are: LiNing, Victor, or Yonex";
-//                System.out.println(errorMsg);
-        }
+        this.brand = brand;
     }
 
-    public int getStringTension() {
+    public Integer getStringTension() {
         return stringTension;
     }
 
-    public void setStringTension(int stringTension) {
+    public void setStringTension(Integer stringTension) {
         if(stringTension >= minStringTension && stringTension <= maxStringTension){
             this.stringTension = stringTension;
         }
@@ -106,9 +92,10 @@ class BadmintonRacket {
     }
 
     public String toString(){
-        String weightFormat = (getWeight() == null || getWeight() == 0) ? "%sU" : "%s";
-        String gripSizeFormat = (getGripSize() == null || getGripSize() == 0) ? "%sG" : "%s";
-        return String.format("Badminton Racket: brand: %s, stringTension: %slb, weight: " + weightFormat + ", gripSize: " + gripSizeFormat, getBrand(), getStringTension(), getWeight(), getGripSize());
+        String stringTension = (getStringTension() == null || getStringTension() == 0) ? "%s" : "%slb";
+        String weightFormat = (getWeight() == null || getWeight() == 0) ? "%s" : "%sU";
+        String gripSizeFormat = (getGripSize() == null || getGripSize() == 0) ? "%s" : "%sG" ;
+        return String.format("Badminton Racket: brand: %s, stringTension: " + stringTension + " weight: " + weightFormat + ", gripSize: " + gripSizeFormat, getBrand(), getStringTension(), getWeight(), getGripSize());
 //        return "Badminton Racket: " + getBrand() + " " + getStringTension() + "lb" + " " + getWeight() + "U" + " " + getGripSize() + "G";
     }
 }
