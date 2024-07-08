@@ -1,4 +1,4 @@
-/*
+package org.snooze;/*
  * client-side main-class focused only on testing setSnoozeInterval
  * we will do BVT (Boundary Value Testing)
  * any bug will be sniffed out on the edges of the valid range

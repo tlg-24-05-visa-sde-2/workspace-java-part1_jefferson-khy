@@ -1,3 +1,5 @@
+package edu.math;
+
 class CalculatorClient {
     public static void main(String[] args) {
         double sum = Calculator.add(1, 3);

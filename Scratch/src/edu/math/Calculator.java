@@ -1,3 +1,5 @@
+package edu.math;
+
 /*
  * This is an all-static class, it has nothing but static methods
  */
