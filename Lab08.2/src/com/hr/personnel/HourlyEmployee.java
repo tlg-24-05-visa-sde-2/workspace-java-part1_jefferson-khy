@@ -19,6 +19,11 @@ public class HourlyEmployee extends Employee {
         setHours(hours);
     }
 
+    @Override
+    public void pay(){
+        System.out.printf(getName() + " is paid hourly $%.2f\n", (getRate() * getHours()));
+    }
+
     public double getRate() {
         return rate;
     }
@@ -35,7 +40,8 @@ public class HourlyEmployee extends Employee {
         this.hours = hours;
     }
 
+    @Override
     public String toString(){
-        return String.format("Hourly employee: name = %s, hireDate = %s, rate = %.2f, hours = %.2f", getName(), getHireDate(), getRate(), getHours());
+        return String.format(super.toString() + ", rate = %.2f, hours = %.2f%n", getRate(), getHours());
     }
 }
