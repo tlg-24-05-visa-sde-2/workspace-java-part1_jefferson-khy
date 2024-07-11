@@ -36,7 +36,8 @@ class Person {
         return birthDate;
     }
 
+    @Override
     public String toString(){
-        return String.format("Person: name = %s, birthDate: %s", name(), birthDate());
+        return String.format("%s: name = %s, birthDate: %s", getClass().getSimpleName(), name(), birthDate());
     }
 }
