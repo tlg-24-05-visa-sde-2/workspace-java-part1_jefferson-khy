@@ -20,6 +20,11 @@ public class Executive extends SalariedEmployee{
         System.out.println("Return filed electronically");
     }
 
+    @Override
+    public double getStandardDeduction(){
+        return getSalary() * 0.5;
+    }
+
     //business methdos
     @Override
     public void work(){
