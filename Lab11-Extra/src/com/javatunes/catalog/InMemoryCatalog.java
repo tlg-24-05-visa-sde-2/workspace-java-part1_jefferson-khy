@@ -10,6 +10,7 @@ package com.javatunes.catalog;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
@@ -38,8 +39,52 @@ public class InMemoryCatalog implements Catalog {
         new MusicItem(18L, "Escape",                    "Journey",                   "1981-02-25", 11.97, MusicCategory.CLASSIC_ROCK))
     );
 
+    @Override
+    public MusicItem findById(Long id) {
+        MusicItem item = null;
+        for (MusicItem currentItem : catalogData) {
+            if(currentItem.getId().equals(id)) {
+                item = currentItem;
+                break;
+            }
+        }
+        return item;
+    }
 
-    /**
+    @Override
+    public Collection<MusicItem> findByKeyword(String keyword) {
+        return List.of();
+    }
+
+    @Override
+    public Collection<MusicItem> findByCategory(MusicCategory category) {
+       Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem currentItem : catalogData) {
+            if(currentItem.getMusicCategory().equals(category)) {
+                result.add(currentItem);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Collection<MusicItem> getAll() {
+        return Collections.unmodifiableCollection(catalogData);
+    }
+
+    public Collection<MusicItem> findSelfTitled(){
+        Collection<MusicItem> result = new ArrayList<>();
+        return result;
+    }
+
+
+
+/**
      * After you've satisfied your contractual obligations above, do these additional tasks.
      *
      * NOTES:
@@ -65,42 +110,70 @@ public class InMemoryCatalog implements Catalog {
      * TASK: find all MusicItems where title is same as artist.
      * For example, Madonna's first album is simply titled, "Madonna."
      */
-
+//    Collection<MusicItem> result = new ArrayList<>();
+//    for
 
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
      */
-
+    public Collection<MusicItem> findRockLessThan(double price) {
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem currentItem : catalogData) {
+            if(currentItem.getPrice() <= price && (currentItem.getMusicCategory().equals(MusicCategory.ROCK) || currentItem.getMusicCategory().equals(MusicCategory.CLASSIC_ROCK))){
+                result.add(currentItem);
+            }
+        }
+        return result;
+    }
 
     /**
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
-
+    public int genreCount(MusicCategory category) {
+        return catalogData.size();
+    }
 
     /**
      * TASK: determine average price of our low-cost, extensive catalog of music.
      */
-
+    public double averagePrice (){
+        double sum = 0;
+        for (MusicItem currentItem : catalogData) {
+            sum += currentItem.getPrice();
+        }
+        return sum / catalogData.size();
+    }
 
     /**
      * TASK: find the cheapest item with the specified genre (MusicCategory).
      */
+    public MusicItem findCheapestByCategory (MusicCategory category){
+        InMemoryCatalog catalog = new InMemoryCatalog();
+        Collection<MusicItem> items = catalog.findByCategory(category);
+        for (MusicItem currentItem : catalogData) {
+
+        }
+        return null;
+    }
 
 
     /**
      * TASK: find the average price of items in the specified genre (MusicCategory).
      */
+    public double avgPrice(MusicCategory category) {
+        return 0.0;
+    }
 
 
     /**
      * TASK: are all items priced at least $10?
-     * This is a yes/no answer.
+     * This is a yes/no answer. YES
      */
 
 
     /**
      * TASK: do we sell any items with the specified genre (MusicCategory)?
-     * Another yes/no answer.
+     * Another yes/no answer. YES
      */
 
 
